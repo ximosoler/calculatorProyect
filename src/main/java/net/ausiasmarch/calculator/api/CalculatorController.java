@@ -15,7 +15,7 @@ import net.ausiasmarch.calculator.entity.Calculation;
 @RequestMapping("/calculator")
 public class CalculatorController {
     
-    @GetMapping("/add/{op1}/{op2}")
+/*     @GetMapping("/add/{op1}/{op2}")
     public ResponseEntity<Calculation> add(@PathVariable(value = "op1") int op1,
                                             @PathVariable(value = "op2") int op2) {
         Calculation oCalc = new Calculation(op1, op2);
@@ -47,10 +47,10 @@ public class CalculatorController {
         return new ResponseEntity<>(oCalc, HttpStatus.OK);
 
     }
-
+ */ 
     @PostMapping
-    public ResponseEntity<Calc>calculadora(@RequestBody Calc oCalc){
+    public ResponseEntity<Calculation>calculadora(@RequestBody Calculation oCalc){
         oCalc.setResult(oCalc.getOp1() + oCalc.getOp2());
-        return new ResponseEntity<Calc>(oCalc, HttpStatus.OK);
+        return new ResponseEntity<Calculation>(oCalc, HttpStatus.OK);
     }
 }
